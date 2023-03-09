@@ -46,7 +46,7 @@ else:
 random_word = random.choice(word_list)
 
 # Define label
-label = font.render("Word", True, BLACK)
+label = font.render(random_word, True, BLACK)
 word_rect = label.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2))
 
 # Define the timer event
