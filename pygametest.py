@@ -36,13 +36,22 @@ score = 0
 time_remaining = 30
 level = EASY
 
-# Define the timer event
-TIMER_EVENT = pygame.USEREVENT + 1
-pygame.time.set_timer(TIMER_EVENT, 1000)
+# Define the word list for the current level
+if level == EASY:
+    word_list = easy_words
+elif level == MEDIUM:
+    word_list = medium_words
+else:
+    word_list = hard_words
+random_word = random.choice(word_list)
 
 # Define label
 label = font.render("Word", True, BLACK)
 word_rect = label.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2))
+
+# Define the timer event
+TIMER_EVENT = pygame.USEREVENT + 1
+pygame.time.set_timer(TIMER_EVENT, 1000)
 
 # Define user_input
 user_input = ""
